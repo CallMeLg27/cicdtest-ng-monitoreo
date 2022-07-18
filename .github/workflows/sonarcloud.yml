@@ -42,8 +42,10 @@ jobs:
   Analysis:
     runs-on: ubuntu-latest
     steps:
-      - name: Analyze with SonarCloud
+#       - name: Analyze with SonarCloud
       - uses: actions/checkout@v2
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # Generate a token on Sonarcloud.io, add it to the secrets of this repo with the name SONAR_TOKEN (Settings > Secrets > Actions > add new repository secret)
