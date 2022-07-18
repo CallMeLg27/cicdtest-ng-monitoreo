@@ -1,0 +1,59 @@
+<div class="menu">
+    <app-sidebar></app-sidebar>
+</div>
+
+<div class="contenido">
+    <div class="reunion">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card-body text-center">
+        <h1>Detalles de Reunion</h1>
+        <hr>
+        <dl class="row">
+            <dt class="col-sm-3">Alumno</dt>
+            <dd class="col-sm-9"><p>{{alumno.nombre}} {{alumno.apellido}}</p></dd>
+
+            <dt class="col-sm-3">Día</dt>
+            <dd class="col-sm-9"><p>{{tutoria.fecha}}</p></dd>
+
+            <dt class="col-sm-3">Hora</dt>
+            <dd class="col-sm-9"><p>{{tutoria.hora}}</p></dd>
+
+            <dt class="col-sm-3">Enlace</dt>
+            <dd class="col-sm-9"><p>{{tutoria.reunion}}</p></dd>
+            
+          </dl>
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-6 offset-lg-3">   
+            <div class="card-body text-center">
+    
+    
+    
+        <form [formGroup]="reunionForm"(submit)="agregarAcuerdo(reunionForm.value)">            
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" formControlName="enlace" id="enlace" placeholder="Enter enlace" aria-describedby="enlace">
+                <label for="email">Enlace de la Grabacion</label>
+            </div>
+            <div class="form-floating mt-3 mb-3">
+                <input
+                id="typeahead-focus"
+                type="text"
+                class="form-control"
+                formControlName="acuerdo"
+                placeholder="Enter acuerdo" 
+                aria-describedby="Acuerdo"
+                [(ngModel)]="modelfocus"
+                [ngbTypeahead]="search"
+                (focus)="focus$.next($any($event).target.value)"
+                (click)="click$.next($any($event).target.value)"
+                #instance="ngbTypeahead"
+                />
+                <label for="acuerdo">Acuerdo</label>
+            </div>
+            <div class="form-floating">
+                <button type="submit" class="btn btn-primary mb-2">Enviar acuerdo</button>
+            </div>
+        
+        </form>
+    </div>
+</div>
