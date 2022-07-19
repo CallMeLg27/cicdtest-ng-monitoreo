@@ -33,4 +33,7 @@ export class ListarAlumnosComponent implements OnInit {
     });
   }
 
+  sum (x:number, y:number) {
+    return x+y;
+  }
 }

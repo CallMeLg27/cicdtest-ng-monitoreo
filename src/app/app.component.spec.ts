@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -12,6 +13,7 @@ describe('AppComponent', () => {
         AppComponent
       ],
     }).compileComponents();
+    component = new AppComponent();
   });
 
   it('should create the app', () => {
@@ -24,12 +26,12 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('cliente');
-  });
+  })
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('cliente app is running!');
-  });
+  it(`el metodo sum debería devolver la suma de los numeros enviados`, () => {
+    let a: number = 5;
+    let b: number = 10;
+    let result: number = a + b;
+    expect(component.sum(a, b)).toBe(result);
+  })
 });
