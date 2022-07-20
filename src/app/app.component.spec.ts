@@ -31,7 +31,7 @@ describe('AppComponent', () => {
   it(`el metodo sum debería devolver la suma de los numeros enviados`, () => {
     let a: number = 5;
     let b: number = 10;
-    let result: number = a + b;
+    let result: number = a + b + 1;
     expect(component.sum(a, b)).toBe(result);
   })
 });
