@@ -28,7 +28,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: cicdtest-ng-monitoreo${{ env.GITHUB_REF_SLUG }}-${{ github.run_id }}-${{ github.run_number }}
+          name: cicdtest-ng-monitoreo-${{ env.GITHUB_REF_SLUG }}-${{ github.run_id }}-${{ github.run_number }}
           path: ./dist/cicdtest-ng-monitoreo
       # - name: Run unit tests
       #   run: npm run test:prod
@@ -70,7 +70,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
-          name: cicdtest-ng-monitoreo${{ env.GITHUB_REF_SLUG }}-${{ github.run_id }}-${{ github.run_number }}
+          name: cicdtest-ng-monitoreo-${{ env.GITHUB_REF_SLUG }}-${{ github.run_id }}-${{ github.run_number }}
           path: './build'
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.1
