@@ -29,7 +29,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: cicdtest-ng-monitoreo-${{ env.GITHUB_REF_SLUG }}-${{ github.run_id }}-${{ github.run_number }}
-          path: ./dist/cicdtest-ng-monitoreo
+          path: ./dist/cliente
       # - name: Run unit tests
       #   run: npm run test:prod
 
